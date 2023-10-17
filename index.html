@@ -16,20 +16,73 @@
             <p class="text-white">Olá, Gutemberg</p>
         </div>
     </header>
-    <main class="flex relative">
+    <main class="flex relative min-h-screen">
         <nav class="w-1/6 absolute left-0 h-full">
-            <ul>
-                <li>Home</li>
-                <li>Produtos</li>
-                <li>Clientes</li>
+            <ul class="px-4 flex flex-col gap-3">
+                <li class="text-lg font-semibold">Home</li>
+                <li class="text-lg font-semibold">Produtos</li>
+                <li class="text-lg font-semibold">Clientes</li>
             </ul>
         </nav>
-        <section class="w-5/6 absolute right-0 bg-slate-50 px-8 py-4">
+        <section class="bg-slate-50 h-full px-8 py-4 w-5/6 absolute right-0">
             <div class="flex justify-between items-center">
                 <h2>Produtos</h2>
-                <button>Novo Produto</button>
+                <button id="addProduct" class="px-3 py-2 rounded-md bg-sky-900 text-white hover:bg-sky-800">Novo Produto</button>
+            </div>
+            <div class="">
+                <table class=" table-auto shadow rounded-md overflow-hidden w-full">
+                    <thead class="bg-sky-950 text-white">
+                        <tr>
+                            <th class="text-left p-3">Date</th>
+                            <th class="text-center p-3">Order ID</th>
+                            <th class="text-left p-3">Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableContent">
+                        <!-- <tr class="even:bg-[#f2f2f2] odd:bg-white">
+                            <td class="p-2">2017-09-29 01:22</td>
+                            <td class="text-center">200398</td>
+                            <td class="p-2">Iphone X 64Gb Grey</td>
+                            <td class="text-center">$999.00</td>
+                            <td class="text-right">1</td>
+                            <td class="text-center">$999.00</td>
+                        </tr>
+                        <tr class="even:bg-[#f2f2f2] odd:bg-white">
+                            <td class="p-2">2017-09-28 05:57</td>
+                            <td class="text-center">200397</td>
+                            <td class="p-2">Samsung S8 Black</td>
+                            <td class="text-center">$756.00</td>
+                            <td class="text-right">1</td>
+                            <td class="text-center">$756.00</td>
+                        </tr>
+                        <tr class="even:bg-[#f2f2f2] odd:bg-white">
+                            <td class="p-2">2017-09-27 07:54</td>
+                            <td class="text-center">200396</td>
+                            <td class="p-2">Iphone 14 Pro Max 128Gb</td>
+                            <td class="text-center">$1,200.00</td>
+                            <td class="text-right">1</td>
+                            <td class="text-center">$1,200.00</td>
+                        </tr> -->
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
+    <div id="modal" class="hidden fixed w-full top-0 bottom-0 bg-[#00000070] justify-center items-center">
+        <div class="flex flex-col gap-2 max-w-fit px-3 py-5 bg-white rounded-md justify-center items-center">
+            <h2 class="uppercase text-lg font-semibold">Novo Produto</h2>
+            <form class="flex flex-col gap-3">
+                <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="text" id="productName" placeholder="Nome do produto">
+                <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="number" id="productValue" placeholder="Valor do produto">
+                <input class="w-72 px-3 py-2 outline-none border border-black rounded-md" type="number" id="productQuality" placeholder="Quantidade do produto">
+                <button class="w-full py-3 px-4 rounded-md text-white bg-sky-900 hover:bg-sky-800 text-lg uppercase" id="send">Enviar</button>
+                <button class="w-full py-3 px-4 rounded-md text-sky-900 bg-yellow-400 hover:bg-yellow-300 text-lg uppercase" id="cancel">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
